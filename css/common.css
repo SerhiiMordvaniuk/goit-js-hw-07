@@ -12,3 +12,94 @@ body {
   color: #212121;
   line-height: 1.5;
 }
+ul{
+  list-style: none;
+}
+
+/*----------TASK 1------*/
+
+
+.item{
+  border-radius: 8px;
+  padding: 16px;
+  width: 392px;
+  background-color: #dfdfe7;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.task-1-item-title {
+  margin: 0;
+  margin-bottom: 16px;
+}
+
+.task-1-list-item{
+  border: 1px solid #808080;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  padding-left: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  position: relative;
+  right: 40px;
+}
+
+/*----------TASK 4------*/
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.task-4-label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.task-4-input  {
+  border: 1px solid #808080;
+  border-radius: 5px;
+  width: 360px;
+  height: 40px;
+
+}
+
+.task-4-input:hover {
+  border: 1px solid black;
+}
+
+.task-4-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 86px;
+  height: 40px;
+  background: #4e75ff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+
+.task-4-btn:hover, .task-4-btn:focus {
+  background-color: #6c8cff;
+}
+
+.task-4-input::placeholder{
+  font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.04em;
+    color: #2e2f42;
+}
