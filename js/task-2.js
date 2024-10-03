@@ -24,3 +24,37 @@ const images = [
     alt: "Lighthouse Coast Sea",
   }
 ];
+
+const gallery = document.querySelector(".gallery")
+
+const img = document.createElement("img")
+img.getAttribute("alt")
+img.getAttribute("src")
+img.getAttribute("width")
+img.setAttribute("width", "360")
+
+
+
+
+
+// const lalala = (arr) => {
+//   arr.map((item) => {
+//     console.log(item.url);
+//       img.setAttribute("src", `${item.url}`);
+//       gallery.append(img)
+//   }
+// )
+//   }
+
+// lalala(images)
+
+
+
+const addImg = (arr) => {
+  for (const key of arr) {
+    img.setAttribute("src", key.url);
+  }
+  gallery.append(img)
+}
+
+addImg(images)
