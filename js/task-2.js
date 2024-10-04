@@ -25,36 +25,29 @@ const images = [
   }
 ];
 
-const gallery = document.querySelector(".gallery")
 
-const img = document.createElement("img")
-img.getAttribute("alt")
-img.getAttribute("src")
-img.getAttribute("width")
-img.setAttribute("width", "360")
+const createGallery = arr => {
 
-
+  const gallery = document.querySelector(".gallery");
+  gallery.style.display = "flex";
+  gallery.style.gap = "24px";
+  gallery.style.flexWrap = "wrap";
 
 
 
-// const lalala = (arr) => {
-//   arr.map((item) => {
-//     console.log(item.url);
-//       img.setAttribute("src", `${item.url}`);
-//       gallery.append(img)
-//   }
-// )
-//   }
-
-// lalala(images)
-
-
-
-const addImg = (arr) => {
-  for (const key of arr) {
-    img.setAttribute("src", key.url);
-  }
+  for (let i = 0; i < images.length; i++) {
+  const url = arr.map(img => img.url);
+  const alt = arr.map(img => img.alt);
+  
+  const img = document.createElement("img")
+  img.getAttribute("alt")
+  img.getAttribute("src")
+  img.getAttribute("width")
+  img.setAttribute("width", "360")
+    img.src = url[i];
+    img.alt = alt[i]
   gallery.append(img)
 }
+}
 
-addImg(images)
+createGallery(images)
