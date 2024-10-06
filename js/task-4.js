@@ -5,7 +5,7 @@ const user = [];
 
 form.addEventListener("submit", (event) => {
         event.preventDefault()
-    if (event.target.elements.email.value == "" || event.target.elements.password.value == "") {
+    if (event.target.elements.email.value == "" || event.target.elements.password.value.trim() == "") {
         alert("All form fields must be filled in")
     }
     else {

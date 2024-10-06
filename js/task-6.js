@@ -33,7 +33,7 @@ const createBoxes = () => {
 
   if (amount <= 100 && amount > 0) {
     boxes.innerHTML = "";
-    let size = 10;
+    let size = 30;
     for (let i = 0; i < amount ; i++) {
       const newBox = document.createElement("div")
       newBox.style.backgroundColor = getRandomHexColor();
@@ -50,6 +50,7 @@ createBtn.addEventListener("click", createBoxes);
 
 function destroyBoxes() {
   boxes.innerHTML = "";
+  document.getElementById("number").value = "";
 }
 
 destroyBtn.addEventListener("click", destroyBoxes)

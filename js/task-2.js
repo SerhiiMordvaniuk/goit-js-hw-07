@@ -27,28 +27,20 @@ const images = [
 ];
 
 
-const createGallery = arr => {
-
-  const gallery = document.querySelector(".gallery");
-  gallery.style.display = "flex";
+const gallery = document.querySelector(".gallery");
+gallery.style.display = "flex";
   gallery.style.gap = "24px";
   gallery.style.flexWrap = "wrap";
 
 
-
-  for (let i = 0; i < images.length; i++) {
-  const url = arr.map(img => img.url);
-  const alt = arr.map(img => img.alt);
-  
-  const img = document.createElement("img")
-  img.getAttribute("alt")
-  img.getAttribute("src")
-  img.getAttribute("width")
-  img.setAttribute("width", "360")
-    img.src = url[i];
-    img.alt = alt[i]
-  gallery.append(img)
-}
+function createItem(arr) {
+  return arr.map(image => `
+    <li>
+    <img src="${image.url}" alt="${image.alt}" class="gallery-item" width="300">
+    </li>
+    `
+  ).join()
 }
 
-createGallery(images)
+
+gallery.innerHTML = createItem(images);
