@@ -6,51 +6,53 @@ function getRandomHexColor() {
 }
 
 
-
-const input = document.querySelector(".task-6-inp")
-
-const createBtn = document.querySelector(".task-6-create-btn");
-
+const createBtn = document.querySelector(".task-6-create-btn")
 const destroyBtn = document.querySelector(".task-6-destroy-btn")
+const boxes = document.querySelector("#boxes")
+
+boxes.style.display = "flex";
+boxes.style.flexWrap = "wrap";
+boxes.style.gap = "8px"
 
 let amount = 0;
 
 function getInputAmount() {
-  amount = document.getElementById("number").value  
-}
+    amount = document.getElementById("number").value  
+  }
 
 createBtn.addEventListener("click", getInputAmount);
 
 
-const boxes = document.querySelector("#boxes")
-boxes.style.backgroundColor = "";
-boxes.style.display = "flex";
-boxes.style.flexWrap = "wrap"
-boxes.style.gap = "8px"
-
-
-const createBoxes = () => {
-
-  if (amount <= 100 && amount > 0) {
-    boxes.innerHTML = "";
+function createBoxes() {
+  if (amount > 0 && amount <= 100) {
+      boxes.innerHTML = "";
     let size = 30;
-    for (let i = 0; i < amount ; i++) {
+    let boxlist = [];
+      for (let i = 0; i < amount; i++) {
+        let arr = []
+        arr.width = size;
+        arr.height = size;
+        boxlist.push(arr)
+        console.log("ok");
+        size += 10
+        document.getElementById("number").value = ""
+      }
+    boxlist.flatMap(box => {
       const newBox = document.createElement("div")
+      newBox.style.width = `${box.width}px`;
+      newBox.style.height = `${box.height}px`;
       newBox.style.backgroundColor = getRandomHexColor();
-      newBox.style.width = `${size}px`;
-      newBox.style.height = `${size}px`;
       boxes.append(newBox);
-      size += 10
-      document.getElementById("number").value = ""
     }
-  }
-}
+    )
+    }
+};
 
-createBtn.addEventListener("click", createBoxes);
+createBtn.addEventListener("click", createBoxes)
 
 function destroyBoxes() {
-  boxes.innerHTML = "";
-  document.getElementById("number").value = "";
+  document.getElementById("number").value = "" 
+  boxes.innerHTML = ""
 }
 
 destroyBtn.addEventListener("click", destroyBoxes)

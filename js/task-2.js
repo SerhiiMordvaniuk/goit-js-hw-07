@@ -34,12 +34,7 @@ gallery.style.display = "flex";
 
 
 function createItem(arr) {
-  return arr.map(image => `
-    <li>
-    <img src="${image.url}" alt="${image.alt}" class="gallery-item" width="300">
-    </li>
-    `
-  ).join()
+  return arr.map(image => `<li> <img src="${image.url}" alt="${image.alt}" class="gallery-item" width="300"> </li>`).join()
 }
 
 
