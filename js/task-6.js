@@ -33,7 +33,6 @@ function createBoxes() {
         arr.width = size;
         arr.height = size;
         boxlist.push(arr)
-        console.log("ok");
         size += 10
         document.getElementById("number").value = ""
       }
