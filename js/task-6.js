@@ -17,34 +17,34 @@ boxes.style.gap = "8px"
 let amount = 0;
 
 function getInputAmount() {
-    amount = document.getElementById("number").value  
+  amount = document.getElementById("number").value  
+  
   }
 
 createBtn.addEventListener("click", getInputAmount);
 
 
 function createBoxes() {
+
+  boxes.innerHTML = "";
+
   if (amount > 0 && amount <= 100) {
-      boxes.innerHTML = "";
     let size = 30;
     let boxlist = [];
-      for (let i = 0; i < amount; i++) {
-        let arr = []
-        arr.width = size;
-        arr.height = size;
-        boxlist.push(arr)
-        size += 10
-        document.getElementById("number").value = ""
-      }
-    boxlist.flatMap(box => {
-      const newBox = document.createElement("div")
-      newBox.style.width = `${box.width}px`;
-      newBox.style.height = `${box.height}px`;
-      newBox.style.backgroundColor = getRandomHexColor();
-      boxes.append(newBox);
+    for (let i = 0; i < amount; i++) {
+      const colorBox = document.createElement("div");
+      colorBox.style.width = `${size}px`;
+      colorBox.style.height = `${size}px`;
+      colorBox.style.backgroundColor = getRandomHexColor();
+
+      boxlist.push(colorBox);
+
+      size +=10
     }
-    )
-    }
+    boxes.append(...boxlist)
+  }
+
+  document.getElementById("number").value = "" 
 };
 
 createBtn.addEventListener("click", createBoxes)
